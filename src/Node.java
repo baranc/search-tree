@@ -3,22 +3,25 @@ public class Node extends ListItem{
         super(value);
     }
     ListItem next(){
-        return ListItem listItem;
+        return this.rightLink;
     };
-    ListItem setNext(ListItem listItem){
-        rightLink = listItem;
-        return rightLink;
+    ListItem setNext(ListItem item){
+        this.rightLink = item;
+        return this.rightLink;
     }
     ListItem previous(){
-        return ListItem listItem;
+        return this.leftLink;
     };
-    ListItem setPrevious(ListItem listItem){
-        leftLink = listItem;
+    ListItem setPrevious(ListItem item){
+        leftLink = item;
         return leftLink;
     }
-    int compareTo(ListItem a, ListItem b){
-        if(valueA > valueB)
-            return 1;
+    int compareTo(ListItem item){
+        if(item!=null){
+            return ((String) super.getValue()).compareTo((String) item.getValue());
+        }else {
+            return -1;
+        }
 
     }
 

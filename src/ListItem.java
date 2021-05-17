@@ -1,6 +1,6 @@
 public abstract class ListItem {
-    protected ListItem leftLink;
-    protected ListItem rightLink;
+    protected ListItem leftLink = null;
+    protected ListItem rightLink = null;
     protected Object value;
 
     public ListItem(Object value) {
@@ -15,9 +15,9 @@ public abstract class ListItem {
         this.value = value;
     }
     abstract ListItem next();
-    abstract ListItem setNetxt();
+    abstract ListItem setNext(ListItem item);
     abstract ListItem previous();
-    abstract ListItem setPrevious();
-    abstract ListItem compareTo();
+    abstract ListItem setPrevious(ListItem item);
+    abstract int compareTo(ListItem item);
 
 }
