@@ -51,7 +51,7 @@ public class MyLinkedList implements NodeLIst{
             while(currentItem != null){
                 int comparison = currentItem.compareTo(item);
                 if(comparison == 0){
-                    if(currentItem = root){
+                    if(currentItem == root){
                         root = currentItem.next();
                     }else{
                         currentItem.previous().setNext(currentItem.next());
