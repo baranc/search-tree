@@ -1,6 +1,6 @@
 public interface NodeLIst {
     ListItem getRoot();
-    boolean addItem();
-    boolean removeItem();
-    void traverse();
+    boolean addItem(ListItem item);
+    boolean removeItem(ListItem item);
+    void traverse(ListItem root);
 }
