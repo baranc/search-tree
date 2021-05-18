@@ -43,10 +43,38 @@ public class MyLinkedList implements NodeLIst{
         }
         return false;
     }
-    public boolean removeItem(ListItem listItem){
+    public boolean removeItem(ListItem item){
+        if(item != null){
+            System.out.println("Deleting item" + item.getValue());
 
+            ListItem currentItem = root;
+            while(currentItem != null){
+                int comparison = currentItem.compareTo(item);
+                if(comparison == 0){
+                    if(currentItem = root){
+                        root = currentItem.next();
+                    }else{
+                        currentItem.previous().setNext(currentItem.next());
+                        if(currentItem.next()!=null){
+                            currentItem.next().setPrevious(currentItem.previous());
+                        }
+                    }
+                    return true;
+                } else if(comparison < 0)
+                    currentItem = currentItem.next();
+                else return false;
+            }
+        }
+        return false;
     }
     public void traverse(ListItem root){
-
+        if(root == null){
+            System.out.println("the list is empty");
+        }
+        else
+            while(root != null){
+                System.out.println(root.getValue());
+                root = root.next();
+            }
     }
 }
